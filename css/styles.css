@@ -4,9 +4,12 @@ body {
 * {
     color: white;
 }
+h2 {
+    text-align: center;
+}
 .board {
     text-align: center;
-    margin-top: 20%;
+    margin-top: 50px;
 }
 .square {
     height: 70px;
