@@ -20,12 +20,12 @@ Board.prototype.findField = function (x, y) {
   })
 };
 Board.prototype.spawnFields = function () {
-  // bottom row y = 0
-  $(".board").append("<div class='row bottom'></div>")
+  // top row y = 2
+  $(".board").append("<div class='row top'></div>")
   for (var i = 0; i < 3; i++) {
-    var newField = new Field(i ,0);
+    var newField = new Field(i ,2);
     fields.push(newField);
-    $(".bottom").append("<div class='square'></div>")
+    $(".top").append("<div class='square'></div>")
     };
   // middle row y = 1
   $(".board").append("<div class='row middle'></div>")
@@ -34,12 +34,12 @@ Board.prototype.spawnFields = function () {
     fields.push(newField);
     $(".middle").append("<div class='square'></div>")
     };
-  // top row y = 2
-  $(".board").append("<div class='row top'></div>")
+  // bottom row y = 0
+  $(".board").append("<div class='row bottom'></div>")
   for (var i = 0; i < 3; i++) {
-    var newField = new Field(i ,2);
+    var newField = new Field(i ,0);
     fields.push(newField);
-    $(".top").append("<div class='square'></div>")
+    $(".bottom").append("<div class='square'></div>")
     };
   };
 function Game(){
@@ -48,4 +48,5 @@ function Game(){
 $(document).ready(function(){
   var board = new Board();
   board.spawnFields();
+  $(".square").eq(0).css("background-color","red");
 });
